@@ -3,14 +3,6 @@ name: manual
 on:
   workflow_dispatch:
 
-  workflow_run:
-    workflows: ["build"]
-    types: [completed]
-
-  pull_request:
-    types:
-      - closed
-
 concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
